@@ -70,7 +70,7 @@ const App = () => {
                 setCompleted(true)
             },250)
         }
-    },[board])
+    },[board,boardObj])
 
     const renderNewGame = () => {
         window.location.reload()
