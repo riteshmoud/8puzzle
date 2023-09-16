@@ -1,0 +1,39 @@
+.board{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    min-height: 60%;
+    color: wheat;
+    font-weight: bolder;
+    font-size: 48px;
+    overflow: hidden;
+    border-radius: 20px;
+    background-color: #264f5f !important;
+}
+
+.num-box{
+    background-color: #163140 ;
+    /* background-color: #68ddba ; */
+    border: 1px solid #eab308;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.empty-box{
+    border: none;
+    background-color: inherit;
+}
+
+.move-right{
+    transform: translateX(100%);
+}
+.move-left{
+    transform: translateX(-100%);
+}
+.move-up{
+    transform: translateY(-100%);
+}
+.move-down{
+    transform: translateY(100%);
+}
