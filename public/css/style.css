@@ -699,6 +699,11 @@ video {
   line-height: 1.75rem;
 }
 
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
 .text-\[\#F5DEB3\] {
   --tw-text-opacity: 1;
   color: rgb(245 222 179 / var(--tw-text-opacity));
@@ -726,6 +731,11 @@ video {
   .sm\:w-full {
     width: 100%;
   }
+
+  .sm\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -735,5 +745,10 @@ video {
 
   .md\:w-1\/2 {
     width: 50%;
+  }
+
+  .md\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 }

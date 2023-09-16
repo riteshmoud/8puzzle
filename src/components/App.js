@@ -57,7 +57,6 @@ const App = () => {
             }
         }
     }
-
     useEffect(()=>{
         const matrix = boardObj.initializeBoard();
         setBoard(matrix)
@@ -107,7 +106,7 @@ const App = () => {
                 completed ? (
                     <div className='flex text-[#F5DEB3] justify-center items-center py-4 px-12 rounded-xl flex-col'>
                         <i class="fa-solid fa-trophy text-[4rem] m-4 text-green-500 fa-bounce"></i>
-                        <h1 className='text-4xl'>🎉 You have made it.. 🎉</h1>
+                        <h1 className='text-xl sm:text-2xl md:text-4xl'>🎉 You have made it.. 🎉</h1>
                     </div>
                 ) : (
                     board.length !== 0 && (
