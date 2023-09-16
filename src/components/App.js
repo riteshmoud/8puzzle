@@ -4,7 +4,7 @@ import '../css/App.css'
 import {motion} from 'framer-motion'
 
 const App = () => {
-    const [boardObj,setBoardObj] = useState(new Board())
+    const [boardObj] = useState(new Board())
     const [board,setBoard] = useState([])
     const [completed,setCompleted] = useState(false)
 
@@ -61,7 +61,7 @@ const App = () => {
     useEffect(()=>{
         const matrix = boardObj.initializeBoard();
         setBoard(matrix)
-    },[])
+    },[boardObj])
 
     useEffect(()=>{
         console.log(board);
