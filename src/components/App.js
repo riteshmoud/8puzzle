@@ -2,61 +2,14 @@ import React, { useEffect, useState } from 'react'
 import Board from './Board'
 import '../css/App.css'
 import {motion} from 'framer-motion'
+import {boardVariant,numBoxVariant,buttonVariant} from './variants'
 
 const App = () => {
     const [boardObj] = useState(new Board())
     const [board,setBoard] = useState([])
     const [completed,setCompleted] = useState(false)
 
-    // framer motion variants
-    const boardVariant = {
-        hidden: {
-            opacity: 0.2,
-            x: '-100vw'
-        },
-        show: {
-            opacity: 1,
-            x: 0,
-            transition: {
-                type: 'spring', 
-                bounce: 0.5, 
-                duration: 0.8,
-                when: 'beforeChildren',
-                staggerChildren: 0.2
-            }
-        }
-    }
 
-    const numBoxVariant = {
-        hidden: {
-            opacity: 0.2,
-            scale: 0
-        },
-        show: {
-            opacity: 1,
-            scale: 1,
-            transition: {
-                type: 'spring', 
-                bounce: 0.6
-            }
-        }
-    }
-
-    const buttonVariant = {
-        hidden: {
-            y: '100vh',
-            opacity: 0.2
-        },
-        show: {
-            y: 0,
-            opacity: 1,
-            transition: {
-                type: 'spring', 
-                bounce: 0.5, 
-                duration: 0.8,
-            }
-        }
-    }
     useEffect(()=>{
         const matrix = boardObj.initializeBoard();
         setBoard(matrix)
@@ -101,7 +54,12 @@ const App = () => {
     }
 
     return (
-        <div className='flex h-screen border-[4px] border-solid border-[#5c16c5] flex-col justify-center items-center bg-[#1f1f23] p-4'>
+        <div className='flex h-screen border-[4px] relative border-solid border-[#5c16c5] flex-col items-center bg-[#1f1f23] overflow-hidden'>
+            <h1 className='text-center text-2xl bg-[#16260e] text-yellow-500 p-4 mb-8 w-screen'>
+                <i class="fa-solid fa-puzzle-piece mr-4"></i>
+                8 Puzzle Game
+                <i class="fa-solid fa-puzzle-piece ml-4"></i>
+                </h1>
             {
                 completed ? (
                     <div className='flex text-[#F5DEB3] justify-center items-center py-4 px-12 rounded-xl flex-col'>
@@ -110,7 +68,7 @@ const App = () => {
                     </div>
                 ) : (
                     board.length !== 0 && (
-                        <motion.div className='board border-[4px] border-solid border-yellow-500 w-full md:w-1/2'
+                        <motion.div className='board border-[4px] border-solid border-yellow-500 w-full md:w-1/2 mx-4'
                             variants={boardVariant}
                             initial='hidden'
                             animate='show'
